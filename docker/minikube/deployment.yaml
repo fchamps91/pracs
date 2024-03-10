@@ -1,0 +1,21 @@
+apiVersion: apps/v1 
+kind: Deployment 
+metadata: 
+  name: helloworld-java-deployment 
+spec: 
+  replicas: 1 
+  selector: 
+    matchLabels: 
+      app: helloworld-java 
+  template: 
+    metadata: 
+      labels: 
+        app: helloworld-java 
+    spec: 
+      containers: 
+      - name: helloworld-java-container 
+        image: abdulkader52/prac10-java 
+
+
+# to apply:
+# kubectl apply -f deployment.yaml
